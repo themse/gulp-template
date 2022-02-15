@@ -1,0 +1,5 @@
+/.idea
+/node_modules
+/dist
+/gulp/version.json
+/src/scss/fonts.scss
