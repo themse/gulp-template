@@ -18,11 +18,7 @@ function watcher() {
   gulp.watch(path.watch.images, images);
 }
 
-const fontTasks = gulp.series(
-  fonts.otfToTtf,
-  fonts.ttfToWoff,
-  fonts.fontsStyle
-);
+const fontTasks = gulp.series(fonts.fontGenerate, fonts.fontStyles);
 
 const mainTasks = gulp.series(
   fontTasks,
