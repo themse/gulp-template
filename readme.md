@@ -10,6 +10,19 @@ I hope it makes life easier and developing faster.
 npm i
 ```
 
+- Install plugin `fontforge` for fonts generation on your OS:
+  - OS X:
+
+  ```bash
+  brew install fontforge
+  ```
+
+  - Linux Ubuntu:
+
+  ```bash
+  sudo apt install fontforge
+  ```
+
 - Start your project
   
 ```bash
