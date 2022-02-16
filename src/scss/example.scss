@@ -286,7 +286,7 @@ p.siteSub {
 	font-size: 92%;
 }
 body {
-	background: url(img/body-top.png) repeat-x top left #f6f6f6;
+	background: url(../img/body-top.png) repeat-x top left #f6f6f6;
 }
 ul {
 	list-style-type: none;
@@ -380,7 +380,7 @@ div.articleRightInner {
 }
 .tabs ul li a {
 	display: block;
-	background: url(img/blue-gradient.png) bottom left repeat-x transparent;
+	background: url(../img/blue-gradient.png) bottom left repeat-x transparent;
 	font-size: 0.85em;
 	padding: 1em 0.5em 0;
 	line-height: 2em;
@@ -395,7 +395,7 @@ div.articleRightInner {
 }
 .tabs ul {
 	display: inline-block;
-	background: url(img/tab-separator.png) repeat-x top left transparent;
+	background: url(../img/tab-separator.png) repeat-x top left transparent;
 	letter-spacing: 0;
 	margin: 0;
 	padding: 0 1px 0 0;
@@ -437,7 +437,7 @@ div.articleRightInner {
 	font-size: 0.8em;
 }
 #submitSearch {
-	background-image: url(img/search.png);
+	background-image: url(../img/search.png);
 	display: inline-block;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -465,7 +465,7 @@ div.articleRightInner {
 span.user {
 	background-position: left top;
 	background-repeat: no-repeat;
-	background-image: url(img/user-ico.png);
+	background-image: url(../img/user-ico.png);
 	padding-left: 15px !important;
 }
 .contentsPanel {

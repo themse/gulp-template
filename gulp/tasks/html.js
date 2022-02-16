@@ -2,10 +2,10 @@ import gulp from 'gulp';
 import fileInclude from 'gulp-file-include';
 import webpHtmlNosvg from 'gulp-webp-html-nosvg';
 import versionNumber from 'gulp-version-number'; // to avoid caching files
+import browserSync from 'browser-sync';
 
 import { errorNotify } from '../common/helpers.js';
 import { path } from '../common/path.js';
-import { plugins } from '../common/plugins.js';
 
 export const html = () => {
   return gulp
@@ -27,5 +27,5 @@ export const html = () => {
       })
     )
     .pipe(gulp.dest(path.build.html))
-    .pipe(plugins.browserSync.stream());
+    .pipe(browserSync.stream());
 };

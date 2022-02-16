@@ -1,8 +1,9 @@
-import { plugins } from '../common/plugins.js';
+import browserSync from 'browser-sync';
+
 import { path } from '../common/path.js';
 
 export const server = () => {
-  plugins.browserSync.init({
+  browserSync.init({
     server: {
       baseDir: path.build.html,
     },

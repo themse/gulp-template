@@ -1,13 +1,13 @@
 import through2 from 'through2';
-
-import { plugins } from './plugins.js';
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
 
 export const noop = () => {};
 
 export const errorNotify = (title) => {
   const transform = function (file, _encoding, callback) {
-    plugins.plumber(
-      plugins.notify.onError({
+    plumber(
+      notify.onError({
         title,
         message: 'Error: <%= error.message %>',
       })

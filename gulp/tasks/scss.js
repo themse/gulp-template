@@ -6,9 +6,9 @@ import cleanCss from 'gulp-clean-css';
 import webpcss from 'gulp-webpcss';
 import autoPrefixer from 'gulp-autoprefixer';
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
+import browserSync from 'browser-sync';
 
 import { path } from '../common/path.js';
-import { plugins } from '../common/plugins.js';
 import { errorNotify } from '../common/helpers.js';
 
 const sass = gulpSass(dartSass);
@@ -44,5 +44,5 @@ export const scss = () => {
       })
     )
     .pipe(gulp.dest(path.build.css))
-    .pipe(plugins.browserSync.stream());
+    .pipe(browserSync.stream());
 };

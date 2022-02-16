@@ -1,9 +1,9 @@
 import gulp from 'gulp';
 import webpack from 'webpack-stream';
+import browserSync from 'browser-sync';
 
 import { errorNotify } from '../common/helpers.js';
 import { path } from '../common/path.js';
-import { plugins } from '../common/plugins.js';
 
 export const script = () => {
   return gulp
@@ -18,5 +18,5 @@ export const script = () => {
       })
     )
     .pipe(gulp.dest(path.build.js))
-    .pipe(plugins.browserSync.stream());
+    .pipe(browserSync.stream());
 };
