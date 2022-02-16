@@ -18,11 +18,8 @@ function watcher() {
   gulp.watch(path.watch.images, images);
 }
 
-const fontTasks = gulp.series(fonts.fontGenerate, fonts.fontStyles);
-
-const mainTasks = gulp.series(
-  fontTasks,
-  gulp.parallel(html, scss, script, images)
-);
+const mainTasks = gulp.parallel(html, scss, script, images);
 
 export default gulp.series(clean, mainTasks, gulp.parallel(watcher, server));
+
+export const fontTasks = gulp.series(fonts.fontGenerate, fonts.fontStyles);

@@ -23,6 +23,12 @@ npm i
   sudo apt install fontforge
   ```
 
+- Generate fonts
+
+```bash
+npm run font:generate
+```  
+
 - Start your project
   
 ```bash

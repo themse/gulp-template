@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
-    "dev": "gulp --cwd ./gulp"
+    "dev": "gulp --cwd ./gulp",
+    "font:generate": "npm run dev -- fontTasks"
   },
   "keywords": [
     "markup",
@@ -34,11 +35,9 @@
     "gulp-webp-html-nosvg": "^1.0.5",
     "gulp-webpcss": "^1.1.1",
     "sass": "^1.49.7",
+    "through2": "^4.0.2",
     "webp-converter": "^2.2.3",
     "webpack": "^5.69.0",
     "webpack-stream": "^7.0.0"
-  },
-  "dependencies": {
-    "through2": "^4.0.2"
   }
 }
