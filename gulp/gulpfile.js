@@ -20,6 +20,7 @@ function watcher() {
 
 const mainTasks = gulp.parallel(html, scss, script, images);
 
-export default gulp.series(clean, mainTasks, gulp.parallel(watcher, server));
-
 export const fontTasks = gulp.series(fonts.fontGenerate, fonts.fontStyles);
+
+export const build = gulp.series(clean, mainTasks);
+export default gulp.series(clean, mainTasks, gulp.parallel(watcher, server));

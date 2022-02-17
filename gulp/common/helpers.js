@@ -48,3 +48,6 @@ export const fontFaceGen = ({
   };
   return through2.obj(transform);
 };
+
+export const IS_BUILD = process.argv.includes('--build');
+export const IS_DEV = !process.argv.includes('--build');

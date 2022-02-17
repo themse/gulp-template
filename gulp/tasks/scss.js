@@ -7,37 +7,44 @@ import webpcss from 'gulp-webpcss';
 import autoPrefixer from 'gulp-autoprefixer';
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
 import browserSync from 'browser-sync';
+import gulpIf from 'gulp-if';
 
 import { path } from '../common/path.js';
-import { errorNotify } from '../common/helpers.js';
+import { errorNotify, IS_BUILD, IS_DEV } from '../common/helpers.js';
 
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
   return gulp
-    .src(path.src.scss, { sourcemaps: true })
+    .src(path.src.scss, { sourcemaps: IS_DEV })
     .pipe(errorNotify('Scss'))
     .pipe(
       sass({
         outputStyle: 'expanded',
       })
     )
-    .pipe(groupCssMediaQueries())
+    .pipe(gulpIf(IS_BUILD, groupCssMediaQueries()))
     .pipe(
-      webpcss({
-        webpClass: '.webp',
-        noWebpClass: '.no-webp',
-      })
+      gulpIf(
+        IS_BUILD,
+        webpcss({
+          webpClass: '.webp',
+          noWebpClass: '.no-webp',
+        })
+      )
     )
     .pipe(
-      autoPrefixer({
-        grid: true,
-        overrideBrowserslist: ['last 3 versions'],
-        cascade: true,
-      })
+      gulpIf(
+        IS_BUILD,
+        autoPrefixer({
+          grid: true,
+          overrideBrowserslist: ['last 3 versions'],
+          cascade: true,
+        })
+      )
     )
     .pipe(gulp.dest(path.build.css)) // original css file
-    .pipe(cleanCss()) // minify css
+    .pipe(gulpIf(IS_BUILD, cleanCss())) // minify css
     .pipe(
       rename({
         extname: '.min.css',
