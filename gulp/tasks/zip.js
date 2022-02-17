@@ -1,4 +1,3 @@
-import del from 'del';
 import gulp from 'gulp';
 import gulpZip from 'gulp-zip';
 
@@ -8,8 +7,6 @@ import { errorNotify } from '../common/helpers.js';
 export const zip = () => {
   const createdAt = new Date().toISOString();
   const fileName = `${ROOT_FOLDER}-${createdAt}.zip`;
-
-  //   del(`${ROOT_FOLDER}.zip`);
 
   return gulp
     .src(`${path.buildFolder}/**/*.*`)
