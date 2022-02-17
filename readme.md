@@ -35,6 +35,12 @@ npm run font:generate
 npm run dev
 ```
 
+- Build your project
+  
+```bash
+npm run build
+```
+
 ## File structure
 
 - `gulp` - where the magic is working
