@@ -1,6 +1,6 @@
 # Gulp template
 
-I hope it makes life easier and developing faster.
+I hope it makes life easier and development faster.
 
 ## Running the project locally
 
