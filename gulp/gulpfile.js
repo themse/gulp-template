@@ -9,6 +9,7 @@ import {
   scss,
   images,
   script,
+  zip,
 } from './tasks/index.js';
 
 function watcher() {
@@ -22,5 +23,6 @@ const mainTasks = gulp.parallel(html, scss, script, images);
 
 export const fontTasks = gulp.series(fonts.fontGenerate, fonts.fontStyles);
 
-export const build = gulp.series(clean, mainTasks);
+export const build = gulp.series(clean, fontTasks, mainTasks);
+export const archiveZip = gulp.series(build, zip);
 export default gulp.series(clean, mainTasks, gulp.parallel(watcher, server));

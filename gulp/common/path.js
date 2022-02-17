@@ -1,5 +1,11 @@
+import * as nodePath from 'path';
+
 const buildFolder = '../dist';
 const srcFolder = '../src';
+const archiveFolder = '../archive';
+
+export const ABSOLUTE_ROOT_PATH = process.env.PWD;
+export const ROOT_FOLDER = nodePath.basename(ABSOLUTE_ROOT_PATH);
 
 export const path = {
   build: {
@@ -26,4 +32,5 @@ export const path = {
   clean: buildFolder,
   buildFolder,
   srcFolder,
+  archiveFolder,
 };

@@ -5,3 +5,4 @@ export { images } from './images.js';
 export { script } from './script.js';
 export { scss } from './scss.js';
 export { server } from './server.js';
+export { zip } from './zip.js';

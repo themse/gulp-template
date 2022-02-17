@@ -41,6 +41,12 @@ npm run dev
 npm run build
 ```
 
+- Archive current production version of your project
+  
+```bash
+npm run archive:zip
+```
+
 ## File structure
 
 - `gulp` - where the magic is working
@@ -56,8 +62,10 @@ npm run build
   - `html` - partials of html (header, footer, sidebar)
   - `example.html`
   - `index.html` - main endpoint
+- `dist` - containing production version of your project (it doesn't exist firstly)
+- `archive` - containing archived production version of your project
 
-There is an example of Wikipedia page. When you start your project, don't forget to delete it in `src/fonts/*`, `src/img/*`, `src/scss/example.scss`, `src/example.html`.
+There is an example of Wikipedia page. When you start your project, don't forget to delete it in `src/fonts/*`, `src/img/*`, `src/scss/example.scss`, `src/example.html` and `archive/*`.
 
 Also take a look another version of my [gulp template](https://github.com/themse/gulp-starter).
 

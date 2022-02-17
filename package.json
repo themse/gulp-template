@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "gulp --cwd ./gulp",
     "build": "gulp build --cwd ./gulp --build",
-    "font:generate": "npm run dev -- fontTasks"
+    "font:generate": "npm run dev -- fontTasks",
+    "archive:zip": "gulp archiveZip --cwd ./gulp --build"
   },
   "keywords": [
     "markup",
@@ -36,6 +37,7 @@
     "gulp-webp": "^4.0.1",
     "gulp-webp-html-nosvg": "^1.0.5",
     "gulp-webpcss": "^1.1.1",
+    "gulp-zip": "^5.1.0",
     "sass": "^1.49.7",
     "through2": "^4.0.2",
     "webp-converter": "^2.2.3",
