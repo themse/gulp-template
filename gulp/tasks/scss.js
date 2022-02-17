@@ -8,6 +8,7 @@ import autoPrefixer from 'gulp-autoprefixer';
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
 import browserSync from 'browser-sync';
 import gulpIf from 'gulp-if';
+import sourcemaps from 'gulp-sourcemaps';
 
 import { path } from '../common/path.js';
 import { errorNotify, IS_BUILD, IS_DEV } from '../common/helpers.js';
@@ -16,13 +17,15 @@ const sass = gulpSass(dartSass);
 
 export const scss = () => {
   return gulp
-    .src(path.src.scss, { sourcemaps: IS_DEV })
+    .src(path.src.scss)
+    .pipe(gulpIf(IS_DEV, sourcemaps.init()))
     .pipe(errorNotify('Scss'))
     .pipe(
       sass({
         outputStyle: 'expanded',
       })
     )
+    .pipe(gulpIf(IS_DEV, sourcemaps.write('.')))
     .pipe(gulpIf(IS_BUILD, groupCssMediaQueries()))
     .pipe(
       gulpIf(
