@@ -1,1 +1,16 @@
-@import 'fonts', 'example';
+@use 'normalize';
+@use 'variables'as v;
+@use 'fonts';
+@use 'example';
+
+// Custom styles
+
+body {
+    background-color: v.$accent-color;
+}
+
+.main {
+    #{&}__title {
+        font-size: 30px;
+    }
+}

@@ -19,6 +19,6 @@ export const fontGenerate = () => {
 export const fontStyles = () => {
   return gulp
     .src(`${path.build.fonts}/**/*.css`)
-    .pipe(concat('fonts.scss'))
+    .pipe(concat('_fonts.scss'))
     .pipe(gulp.dest(`${path.srcFolder}/scss/`));
 };
