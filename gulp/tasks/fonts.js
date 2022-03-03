@@ -20,5 +20,5 @@ export const fontStyles = () => {
   return gulp
     .src(`${path.build.fonts}/**/*.css`)
     .pipe(concat('_fonts.scss'))
-    .pipe(gulp.dest(`${path.srcFolder}/scss/`));
+    .pipe(gulp.dest(`${path.srcFolder}/scss/base/`));
 };
